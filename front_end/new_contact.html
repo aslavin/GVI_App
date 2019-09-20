@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+
+      <!-- Metadata for the Webpage -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>New Contact</title>
+
+      <!-- HTML5 Shim -->
+      <!-- NOTE: Respond.js doesn't work viewing page via file:// -->
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+
+      <!-- Bootstrap CSS files-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- Google Open Sans web font -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+
+      <!-- Font Awesome Web Icons -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        .buttonClass {
+          font-size: 160%;
+          display:inline
+        }
+        .wrapper {
+          background-color: green; /* for visualization purposes */
+          text-align: center;
+        }
+        .yourdiv {
+          background-color: red; /* for visualization purposes */
+          display: inline-block;
+        }
+
+      </style>
+
+
+
+   </head>
+   <body style="background-color:#33ccff">
+
+      <!-- This is where your body content goes... -->
+      <h1>New Contact</h1>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5957.704102369609!2d-86.24302527314478!3d41.70212947725431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816cd576bfc35cd%3A0x5a2be3cb659fd9b7!2sUniversity+of+Notre+Dame!5e0!3m2!1sen!2sus!4v1551119162386" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <br>
+
+      <div align="center">
+        <p style="font-size: 160%; display:inline; text-align: center"> Notes: </p>
+        <p class='buttonClass'><a role='button' class='btn btn-default' href='' target='_blank'><i class="fa fa-fw fa-microphone" aria-hidden="true"></i></a></p>
+      </div>
+      <br>
+
+      <div align="center">
+        <textarea style="resize: none; align: center" rows="5" cols="40">
+
+        </textarea>
+      </div>
+
+	  <form action="/finalize_contact/" method="get">
+	  	<p class='text-center'>
+			<a role='button' class='btn btn-danger' href='./finalize_contact.html' >Submit and Review Now</a>
+		</p>
+	  </form>
+
+	  <form action="/finalize_contact/" method="get">
+	  	<p class='text-center'>
+			<a role='button' class='btn btn-danger' href='#' >Submit and Review Later</a>
+		</p>
+	  </form>
+
+
+
+      <!-- jQuery Javascript Library (required by Bootstrap) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <!-- Bootstrap Library -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	  <script type="text/javascript" src="scripts/json2.js"></script>
+	  <script type="text/javascript" src="scripts/main.js"></script>
+
+   </body>
+</html>

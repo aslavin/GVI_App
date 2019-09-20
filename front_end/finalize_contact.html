@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+
+      <!-- Metadata for the Webpage -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Finalize Contact</title>
+
+      <!-- HTML5 Shim -->
+      <!-- NOTE: Respond.js doesn't work viewing page via file:// -->
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+
+      <!-- Bootstrap CSS files-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- Google Open Sans web font -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+
+      <!-- Font Awesome Web Icons -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+	  	  
+	  <style>
+        .headingClass {
+          font-size: 160%;
+          display:inline
+        }
+        .column {
+          float: left;
+          width: 50%;
+        }
+		.column p {
+		  align: center;
+		}
+        .myrow:after {
+          display: table;
+          clear: both;
+        }
+
+      </style>
+
+
+
+   </head>
+   <body style="background-color:#33ccff">
+
+      <!-- This is where your body content goes... -->
+      <p style='font-size: 160%;'align="center";>Finalize Contact</p>
+
+      <div class='myrow'>
+        <div class='column'>
+          <p> First Name </p>
+          <input type="text" name="fname"><br>
+          <p> Date of Contact </p>
+          <input type="text" name="date"><br>
+          <p> Email </p>
+          <input type="text" name="email"><br>
+        </div>
+        <div class='column'>
+          <p> Last Name </p>
+          <input type="text" name="lname"><br>
+          <p> Phone Number </p>
+          <input type="text" name="pnumber"><br>
+          <p> Address </p>
+          <input type="text" name="addr"><br>
+        </div>
+      </div>
+
+      <p style="display:inline; "> Risk Level: </p>
+      <select style="background-color: #cdd0d6" id="rlevel">
+        <option value="possible">Possible Risk for Violence</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </select>
+      <br>
+      <br>
+
+      <p style="display:inline;"> Support Needed: </p>
+      <select style="background-color: #cdd0d6" id="sneeded">
+        <option value="job">Job Training</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </select>
+      <br>
+      <br>
+
+      <p style="display:inline;"> Gang Affiliation: </p>
+      <select style="background-color: #cdd0d6" id="gaffil">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </select>
+      <br>
+      <br>
+
+      <p> Relationships: </p>
+      <p> TODO: figure out best way to display these </p>
+      <br>
+
+      <p> Interaction Details: <p>
+      <textarea style="resize: none;" rows="5" cols="40">
+      </textarea>
+      <br>
+
+
+	  <p class='text-center' id='submitButton'>
+	    <a role='button' onclick="submitContact()" class='btn btn-danger' href='./new_contact.html' >Submit</a>
+	  </p>
+
+
+
+   </body>
+
+	        <!-- jQuery Javascript Library (required by Bootstrap) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <!-- Bootstrap Library -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	  
+	  <script type="text/javascript" src="scripts/main.js"></script>
+	  <script type="text/javascript" src="scripts/json2.js"></script>
+
+</html>
