@@ -27,7 +27,7 @@ function submitContact() {
 			console.error(xhr.statusText);
 		}
 	}
-	var text = JSON.stringify({"Title": fname, "Last Name": lname, "Email": email, "Date of Contact": date, "Phone Number": pnumber, "Email Address": email, "Phone Number": pnumber, "Address": address, "Risk Level": rlevel, "Support Needed": sneeded, "Gang Affiliation": gaffill});
+	var text = JSON.stringify({"First Name": fname, "Last Name": lname, "Email": email, "Phone Number": pnumber, "Address": address, "Risk Level": rlevel, "Support Needed": sneeded, "Gang Affiliation": gaffil});
 
 	// send request
 	xhr.send(text);

@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 from shareplum import Site
 from shareplum import Office365
