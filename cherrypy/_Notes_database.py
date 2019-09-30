@@ -17,6 +17,7 @@ class _Notes_database:
 
 		note = data["note"]
 		self.notes[timestamp] = note
+		print(self.notes)
 
 		self.outfile.write("timestamp: {}\n".format(timestamp))
 		self.outfile.write("note: \n{}\n\n".format(note))

@@ -57,20 +57,24 @@
       <br>
 
       <div align="center">
-        <textarea style="resize: none; align: center" rows="5" cols="40">
+        <textarea style="resize: none; align: center" rows="5" cols="40" name="notebox">
 
         </textarea>
       </div>
 
+    <p class='text-center' id='locationButton'>
+      <a role='button' onclick="getLocation()" class='btn btn-danger' >Get Location</a>
+    </p>
+
 	  <form action="/finalize_contact/" method="get">
 	  	<p class='text-center'>
-			<a role='button' class='btn btn-danger' href='./finalize_contact.html' >Submit and Review Now</a>
+			<a role='button' class='btn btn-danger' onclick="submitNote()" href='./finalize_contact.html' >Submit and Review Now</a>
 		</p>
 	  </form>
 
 	  <form action="/finalize_contact/" method="get">
 	  	<p class='text-center'>
-			<a role='button' class='btn btn-danger' href='#' >Submit and Review Later</a>
+			<a role='button' class='btn btn-danger' onclick="submitNote()" href='#' >Submit and Review Later</a>
 		</p>
 	  </form>
 
@@ -83,7 +87,8 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	  <script type="text/javascript" src="scripts/json2.js"></script>
-	  <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/location.js"></script>
 
    </body>
 </html>
