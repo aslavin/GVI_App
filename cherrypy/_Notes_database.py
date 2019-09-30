@@ -13,11 +13,13 @@ class _Notes_database:
 
 	def add_note(self, data):
 		now = datetime.now()
-		timestamp = now.strftime("%d/%m %H:%M")
-		self.notes[timestamp] = data
+		timestamp = now.strftime("%d/%m %H:%M:%S")
+
+		note = data["note"]
+		self.notes[timestamp] = note
 
 		self.outfile.write("timestamp: {}\n".format(timestamp))
-		self.outfile.write("note: \n{}\n\n".format(data))
+		self.outfile.write("note: \n{}\n\n".format(note))
 
 	def get_note(self, timestamp):
 		if timestamp in self.notes.keys():
