@@ -1,6 +1,7 @@
 import os
 import requests
 import json
+from datetime import datetime
 
 
 class _Notes_database:
@@ -8,9 +9,15 @@ class _Notes_database:
 	# initialize databse
 	def __init__(self):
 		self.notes = dict()
+		self.outfile = open("note_output.txt","w+")
 
-	def add_note(self, timestamp, data):
+	def add_note(self, data):
+		now = datetime.now()
+		timestamp = now.strftime("%d/%m %H:%M")
 		self.notes[timestamp] = data
+
+		self.outfile.write("timestamp: {}\n".format(timestamp))
+		self.outfile.write("note: \n{}\n\n".format(data))
 
 	def get_note(self, timestamp):
 		if timestamp in self.notes.keys():
