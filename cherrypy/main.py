@@ -5,7 +5,9 @@
 import cherrypy
 import json
 from _GVI_database import _GVI_database
+from _Notes_database import _Notes_database
 from contacts import contactsController
+from notes import notesController
 
 # set up cors
 class optionsController:
@@ -19,8 +21,9 @@ def CORS():
 
 cherrypy.tools.CORS = cherrypy.Tool('before_handler', CORS)
 
-# create new aaron backend
+# create new backend
 gvidb = _GVI_database() # shared across all controllers
+notesdb = _Notes_database()
 
 # load all data
 dispatcher = cherrypy.dispatch.RoutesDispatcher()
@@ -34,6 +37,10 @@ conf = { 'global': {'server.socket_host': '127.0.0.1',
 
 # initialize controllers
 contactsController = contactsController(gvidb)
+notesController = notesController(notesdb)
+
+# new note handler
+dispatcher.connect('postNote', '/notes/', controller=notesController, action='POST_NOTE', conditions=dict(method=['POST']))
 
 # generic handlers for setting/deleting all contacts
 # dispatcher.connect('getContacts', '/contacts/', controller=contactsController, action='GET_CONTACTS', conditions=dict(method=['GET']))
@@ -48,6 +55,8 @@ dispatcher.connect('deleteContact', '/contacts/:contact_id', controller=contacts
 # options handlers - need one for each possible path definied above
 dispatcher.connect('contacts_all__op', '/contacts/', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
 dispatcher.connect('contacts_key_op', '/contacts/:contact_id', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
+dispatcher.connect('notes_all_op', '/notes/', controller=notesController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
+
 
 cherrypy.config.update(conf) #tells library what the configuration is
 

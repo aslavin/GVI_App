@@ -3,7 +3,6 @@
 
 // called by submit button press in finalize contact
 function submitContact() {
-	console.log("here");
 	var fname = document.getElementsByName("fname")[0].value; // first name
 	var lname = document.getElementsByName("lname")[0].value; // last name
 	var date = document.getElementsByName("date")[0].value; // date
@@ -28,6 +27,25 @@ function submitContact() {
 		}
 	}
 	var text = JSON.stringify({"First Name": fname, "Last Name": lname, "Email": email, "Phone Number": pnumber, "Address": address, "Risk Level": rlevel, "Support Needed": sneeded, "Gang Affiliation": gaffil});
+
+	// send request
+	xhr.send(text);
+}
+
+// submit note to be stored in back end by time
+function submitNote() {
+	var note = document.getElementsByName("notebox")[0].value; // get note
+	// send post request to server
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'http://127.0.0.1:51017/notes/', true);
+
+	xhr.onload = function(e) {
+
+		if (xhr.readyState != 4) { // failed
+			console.error(xhr.statusText);
+		}
+	}
+	var text = JSON.stringify({"note": note});
 
 	// send request
 	xhr.send(text);

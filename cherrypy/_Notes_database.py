@@ -17,11 +17,18 @@ class _Notes_database:
 
 		note = data["note"]
 		self.notes[timestamp] = note
+<<<<<<< HEAD
 		# DEBUG:
 		print(self.notes)
 		
 		# self.outfile.write("timestamp: {}\n".format(timestamp))
 		# self.outfile.write("note: \n{}\n\n".format(note))
+=======
+		print(self.notes)
+
+		self.outfile.write("timestamp: {}\n".format(timestamp))
+		self.outfile.write("note: \n{}\n\n".format(note))
+>>>>>>> d021d0e1a2b77dde62836d946e38636962aa1d8e
 
 	def get_note(self, timestamp):
 		if timestamp in self.notes.keys():
