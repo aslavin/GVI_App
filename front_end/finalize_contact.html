@@ -101,9 +101,35 @@
       <br>
       <br>
 
-      <p> Relationships: </p>
-      <p> TODO: figure out best way to display these </p>
+      <p style="display:inline;"> Reason for Contact: </p>
+      <select style="background-color: #cdd0d6" id="rfc">
+        <option value="1">Recent Violence</option>
+        <option value="2">Follow Up</option>
+        <option value="3">Self-Initiated</option>
+        <option value="4">Other</option>
+      </select>
       <br>
+      <br>
+
+      <p style="display:inline;"> Person Type: </p>
+      <select style="background-color: #cdd0d6" id="p_type">
+        <option value="1">At Risk Person</option>
+        <option value="2">Influentatial</option>
+        <option value="3">Both</option>
+      </select>
+      <br>
+      <br>
+
+      <div class='myrow'>
+        <div class='column'>
+          <p> Influentatial Name </p>
+          <input type="text" name="infl_name"><br>
+        </div>
+        <div class='column'>
+          <p> Influentatial Relationship </p>
+          <input type="text" name="infl_relation"><br>
+        </div>
+      </div>
 
       <p> Interaction Details: <p>
       <textarea style="resize: none;" rows="5" cols="40">
