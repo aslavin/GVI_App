@@ -9,7 +9,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Login</title>
+      <title>Edit Notes</title>
 
       <!-- HTML5 Shim -->
       <!-- NOTE: Respond.js doesn't work viewing page via file:// -->
@@ -44,43 +44,34 @@
    </head>
    <body style="background-color:#33ccff">
 
-      <!-- This is where your body content goes... -->
-      <div align="center">
-        <h1>Login</h1>
-      </div>
-      <br>
+    <!-- This is where your body content goes... -->
+    <h1 align = "center">Edit Notes</h1>
 
-      <div style="display:inline-block;width:80%;margin-left:19%">
-        <p style="display:inline-block" class="lead">Email:</p>
-        <input style="display:inline-block" type="text" name="email"><br>
-      </div>
+    <div align = "center">
+        <p style="display:inline;"> Select Note to Edit/View: </p>
+        <select style="background-color: #cdd0d6" id="note_edit">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        </select>
+    </div>
+    <br>
 
-      <br>
-      <br>
+    <div align="center">
+        <textarea style="resize: none; align: center" rows="5" cols="40" name="notebox"></textarea>
+    </div>
+    <br>
+    <p class='text-center'>
+        <input type="submit" class='btn but-default' href='' value="Save Note">
+    </p>
+   
+    <!-- Bootstrap Library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-      <div style="display:inline-block;width:80%;margin-left:10%">
-        <p style="display:inline-block" class="lead">Password:</p>
-        <input style="display:inline-block" type="text" name="email"><br>
-      </div>
-
-	  <div style="text-algin:center">
-	    <form action="/new_contact/" method="get">
-	      <p class='text-center'>
-		  	  <input type="submit" class='btn but-default' href='' value="Submit">
-		    </p>
-	    </form>
-	  </div>
-
-	  <!--<p> Hi {{person.firstname}} {{person.lastname}}</p>-->
-
-      <br>
-
-
-	  <!-- jQuery Javascript Library (required by Bootstrap) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-      <!-- Bootstrap Library -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/json2.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/location.js"></script>
 
    </body>
 </html>
