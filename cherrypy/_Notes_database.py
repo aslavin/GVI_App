@@ -22,7 +22,7 @@ class _Notes_database:
 		now = datetime.now()
 		timestamp = now.strftime("%d/%m %H:%M:%S")
 
-		note = data["note"][1:]  # strip leading newline
+		note = data["note"]  # strip leading newline
 		self.notes[timestamp] = note
 
 		# update physical db
@@ -42,8 +42,8 @@ class _Notes_database:
 		else:
 			return "Not Found."
 
-	# def get_all_notes(self):
-	# 	return json.dumps(self.notes)
+	def get_all_notes(self):
+	 	return json.dumps(self.notes)
 
 	def delete_note(self, timestamp):
 		self.notes.pop(timestamp)
@@ -60,9 +60,12 @@ class _Notes_database:
 	# write changes to physical db
 	def write_db(self):
 		# write to csv for viewing
-		w = csv.writer(open("data/note_db_current.csv", "w"))
+		f = open("data/note_db_current.csv","w+")
+		w = csv.writer(f)
 		for key, val in self.notes.items():
 		    w.writerow([key, val])
+		    f.write("{}, {}".format(key, val))
+		f.close()
 		# write to pickle file for restarting db
 		out_file = open("data/note_db.pickle","wb")
 		pickle.dump(self.notes,out_file)

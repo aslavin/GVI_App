@@ -39,10 +39,11 @@ conf = { 'global': {'server.socket_host': '127.0.0.1',
 contactsController = contactsController(gvidb)
 notesController = notesController(notesdb)
 
-# new note handler
+# generic notes handlers
 dispatcher.connect('postNote', '/notes/', controller=notesController, action='POST_NOTE', conditions=dict(method=['POST']))
+dispatcher.connect('getNotes', '/notes/', controller=notesController, action='GET_NOTES', conditions=dict(method=['GET']))
 
-# generic handlers for setting/deleting all contacts
+# generic contact handlers
 # dispatcher.connect('getContacts', '/contacts/', controller=contactsController, action='GET_CONTACTS', conditions=dict(method=['GET']))
 dispatcher.connect('postContact', '/contacts/', controller=contactsController, action='POST_CONTACT', conditions=dict(method=['POST']))
 # dispatcher.connect('deleteContacts', '/contacts/', controller=contactsController, action='DELETE_CONTACTS', conditions=dict(method=['DELETE']))
