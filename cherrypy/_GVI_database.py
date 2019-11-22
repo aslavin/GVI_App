@@ -17,12 +17,12 @@ class _GVI_database:
 		user = os.getenv("GVI_USER")
 		passwd = os.getenv("GVI_PASSWD")
 		url = 'https://cseserviceproj.sharepoint.com'
-		'''
+	
 		self.spSite = testShare.initSite(user, passwd, url)
 		self.spList = testShare.getList(self.spSite, "TestList_Collection")
 		self.contacts = {}
 		self.contacts[0] = {"key": "value"}
-		'''
+	
 	
 
 	# set a new contact
