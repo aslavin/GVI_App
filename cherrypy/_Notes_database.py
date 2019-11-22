@@ -28,9 +28,12 @@ class _Notes_database:
 		# update physical db
 		self.write_db()
 
-	def set_note(self,timestamp,new_note):
+	# update an existing note
+	def set_note(self, data):
+		timestamp = data['timestamp']
+		updated_note = data['updated_note']
 		if timestamp in self.notes.keys():
-			self.notes[timestamp] = new_note
+			self.notes[timestamp] = updated_note
 
 		# update physical db
 		self.write_db()

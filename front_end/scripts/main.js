@@ -76,6 +76,8 @@ function loadNotes() {
 
 	// send request
 	xhr.send();
+
+	updateNoteField();
 	
 }
 
@@ -83,7 +85,7 @@ function loadNotes() {
 function updateNoteField() {
 
 	// get notes and select the one that was selected
-var xhr = new XMLHttpRequest();
+	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'http://127.0.0.1:51017/notes/', true);
 
 	xhr.onload = function(e) {
@@ -105,4 +107,34 @@ var xhr = new XMLHttpRequest();
 
 	// send request
 	xhr.send();
+}
+
+// update note with what's been typed in the note field
+function updateNote() {
+
+	var xhr = new XMLHttpRequest();
+
+	xhr.open('POST', 'http://127.0.0.1:51017/update_notes/', true);
+
+	xhr.onload = function(e) {
+
+		if (xhr.readyState != 4) { // failed
+			console.error(xhr.statusText);
+		}
+	}
+
+	// get timestamp for the note that's being editted
+	var edit_dropdown = document.getElementById("note_edit")
+	var selected_timestamp = edit_dropdown.options[edit_dropdown.selectedIndex].value;
+
+	// get text for the note that's being editted
+	updated_text = document.getElementById("notebox").value;
+
+	request = {'timestamp': selected_timestamp, 'updated_note': updated_text};
+
+	console.log(request);
+
+	// send request
+	xhr.send(JSON.stringify(request));
+
 }

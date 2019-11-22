@@ -42,6 +42,7 @@ notesController = notesController(notesdb)
 # generic notes handlers
 dispatcher.connect('postNote', '/notes/', controller=notesController, action='POST_NOTE', conditions=dict(method=['POST']))
 dispatcher.connect('getNotes', '/notes/', controller=notesController, action='GET_NOTES', conditions=dict(method=['GET']))
+dispatcher.connect('postUpdatedNote', '/update_notes/', controller=notesController, action='POST_UPDATED_NOTE', conditions=dict(method=['POST']))
 
 # generic contact handlers
 # dispatcher.connect('getContacts', '/contacts/', controller=contactsController, action='GET_CONTACTS', conditions=dict(method=['GET']))
@@ -57,6 +58,7 @@ dispatcher.connect('deleteContact', '/contacts/:contact_id', controller=contacts
 dispatcher.connect('contacts_all__op', '/contacts/', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
 dispatcher.connect('contacts_key_op', '/contacts/:contact_id', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
 dispatcher.connect('notes_all_op', '/notes/', controller=notesController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
+dispatcher.connect('notes_all_op', '/update_notes/', controller=notesController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
 
 
 cherrypy.config.update(conf) #tells library what the configuration is

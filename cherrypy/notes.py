@@ -21,8 +21,9 @@ class notesController:
 		return json.dumps(self.notesdb.get_note(note_id))
 
 	# change an existing note
-	def PUT_NOTE(self, note_id):
-		self.notesdb.set_note(note_id, json.loads(cherrpy.request.body.read()))
+	def POST_UPDATED_NOTE(self):
+		print("here")
+		self.notesdb.set_note(json.loads(cherrypy.request.body.read()))
 		return json.dumps({"result": "success"})
 
 	# delete an existing note
