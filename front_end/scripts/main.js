@@ -9,6 +9,8 @@ function submitContact() {
 	var email = document.getElementsByName("email")[0].value; // email
 	var pnumber = document.getElementsByName("pnumber")[0].value; // phone number
 	var address = document.getElementsByName("addr")[0].value; // address
+	var em_name = document.getElementsByName("infl_name")[0].value;
+	var em_num = document.getElementsByName("infl_relation")[0].value;
 	var rlevel = document.getElementById("rlevel"); // risk level
 	rlevel = rlevel.options[rlevel.selectedIndex].text;
 	var sneeded = document.getElementById("sneeded"); // support needed
@@ -26,7 +28,7 @@ function submitContact() {
 			console.error(xhr.statusText);
 		}
 	}
-	var text = JSON.stringify({"First Name": fname, "Last Name": lname, "Email": email, "Phone Number": pnumber, "Address": address, "Risk Level": rlevel, "Support Needed": sneeded, "Gang Affiliation": gaffil});
+	var text = JSON.stringify({"First Name": fname, "Last Name": lname, "Email": email, "Phone Number": pnumber, "Address": address, "Risk Level": rlevel, "Support Needed": sneeded, "Gang Affiliation": gaffil, "Emergency Contact Number": em_num, "Emergency Contact", em_name});
 
 	// send request
 	xhr.send(text);
